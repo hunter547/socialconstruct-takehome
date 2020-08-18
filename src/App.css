@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.App-background {
+  height: 60vmin;
+  pointer-events: none;
+}
+
+.App-main {
+  background-color: #f7cc4f;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: white;
+}
