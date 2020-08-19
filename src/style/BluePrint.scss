@@ -1,0 +1,11 @@
+
+
+.blueprint__container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .blueprint {
+    height: 50rem;
+    width: 23.5rem;
+  }
+}
