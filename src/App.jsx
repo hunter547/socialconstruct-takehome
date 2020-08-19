@@ -4,7 +4,7 @@ import './App.css';
 import StudioInfo from './data/studio_info.json';
 import FloorInfo from './data/floor_info.json';
 import BluePrint from './BluePrint';
-import { ItemsContext } from './utilities/ItemsContext';
+import { ItemsContext } from './context/ItemsContext';
 
 const allInfo = Object.entries(StudioInfo).concat(Object.entries(FloorInfo)).map(item => {
   return {name: item[0], coordinates: item[1]}
