@@ -10,7 +10,6 @@ export function getLineProps(coordinates) {
       return {x1: xy[0], x2: coordinates[0][0], y1: Math.abs(xy[1]), y2: Math.abs(coordinates[0][1])}
     }
   });
-
-  console.log(lineArray)
+  
   return lineArray;
 };

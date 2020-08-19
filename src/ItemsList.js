@@ -19,7 +19,16 @@ const ItemsList = () => {
           )
         })}
       </ul>
-      <BluePrint pucks={allInfo[6]} />
+      <BluePrint 
+        bathrooms={allInfo[0]}
+        closets={allInfo[1]}
+        doors={allInfo[2]}
+        floors={allInfo[3]}
+        genericRooms={allInfo[4]}
+        kitchens={allInfo[5]} 
+        pucks={allInfo[6]}
+        windows={allInfo[7]} 
+      />
     </div>
   );
 }

@@ -1,22 +1,37 @@
 import React from 'react';
-import { getLineProps } from './utilities/getLineProps';
+import { mapSVGLines } from './utilities/mapSVGLines';
 import './style/BluePrint.scss'
  
-function BluePrint({ pucks }) {
+function BluePrint(props) {
 
-  const puckCoordinates = pucks.coordinates;
+  const { bathrooms, closets, doors, floors, genericRooms, kitchens, pucks, windows } = props;
 
   return (
     <div className="blueprint__container">
-      <svg className="blueprint" width={235} height={500} viewBox="9725 125 10000 375" preserveAspectRatio="xMinYMin slice">
-        <g id="puck">
-          {puckCoordinates.map(singlePuckCoordinates => {
-            const puckParameters = getLineProps(singlePuckCoordinates);
-            return puckParameters.map(puck => (
-                <line {...puck} stroke="black" strokeWidth={0.5} />
-              )
-            )
-          })}
+      <svg className="blueprint" width={235} height={500} viewBox="9720 120 10000 390" preserveAspectRatio="xMinYMin slice">
+        <g id="bathrooms">
+          {mapSVGLines(bathrooms.coordinates).map(bathroom => bathroom )}
+        </g>
+        <g id="closets">
+          {mapSVGLines(closets.coordinates).map(closet => closet )}
+        </g>
+        <g id="doors">
+          {mapSVGLines(doors.coordinates).map(door => door )}
+        </g>
+        <g id="floors">
+          {mapSVGLines(floors.coordinates).map(floor => floor )}
+        </g>
+        <g id="genericRooms">
+          {mapSVGLines(genericRooms.coordinates).map(genericRoom => genericRoom )}
+        </g>
+        <g id="kitchens">
+          {mapSVGLines(kitchens.coordinates).map(kitchen => kitchen )}
+        </g>
+        <g id="pucks">
+          {mapSVGLines(pucks.coordinates).map(puck =>  puck )}
+        </g>
+        <g id="windows">
+          {mapSVGLines(windows.coordinates).map(window =>  window )}
         </g>
       </svg>
     </div>
