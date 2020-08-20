@@ -1,65 +1,57 @@
 import React, { useContext, useState } from 'react';
-import { mapSVGLines } from './utilities/mapSVGLines';
 import './style/BluePrint.scss'
 import { ItemsContext } from './context/ItemsContext';
-import { mapSVGRects } from './utilities/mapSVGRects';
+import { mapSVGPolys } from './utilities/mapSVGPolys';
  
 function BluePrint(props) {
 
   const { bathrooms, closets, doors, floors, genericRooms, kitchens, pucks, windows } = props;
   const [itemsContext,] = useContext(ItemsContext);
+  const [fillID, setFillID] = useState(null)
 
   return (
     <div className="blueprint__container">
       <svg className="blueprint" width={235} height={500} viewBox="9720 120 10000 390" preserveAspectRatio="xMinYMin slice">
         {itemsContext.bathrooms && (
           <g id="bathrooms">
-            {mapSVGLines(bathrooms.coordinates, 'pink').map(bathroom => bathroom )}
-            {mapSVGRects(bathrooms).map(rect => rect)}
+            {mapSVGPolys(bathrooms, 'pink', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.closets && (
           <g id="closets">
-            {mapSVGLines(closets.coordinates, 'black').map(closet => closet )}
-            {mapSVGRects(closets).map(rect => rect)}
+            {mapSVGPolys(closets, 'black', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.doors && (
           <g id="doors">
-            {mapSVGLines(doors.coordinates, 'green').map(door => door )}
-            {mapSVGRects(doors).map(rect => rect)}
+            {mapSVGPolys(doors, 'green', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.floors && (
           <>
             <g id="floors">
-              {mapSVGLines(floors.coordinates, 'black').map(floor => floor )}
-              {mapSVGRects(floors).map(rect => rect)}
+              {mapSVGPolys(floors, 'black', fillID, setFillID).map(poly => poly)}
             </g>
           </>
         )}
         {itemsContext.generic_rooms && (
           <g id="genericRooms">
-            {mapSVGLines(genericRooms.coordinates, 'lightblue').map(genericRoom => genericRoom )}
-            {mapSVGRects(genericRooms).map(rect => rect)}
+            {mapSVGPolys(genericRooms, 'lightblue', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.kitchens && (
           <g id="kitchens">
-            {mapSVGLines(kitchens.coordinates, 'magenta').map(kitchen => kitchen )}
-            {mapSVGRects(kitchens).map(rect => rect)}
+            {mapSVGPolys(kitchens, 'magenta', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.pucks && (
           <g id="pucks">
-            {mapSVGLines(pucks.coordinates, 'black').map(puck =>  puck )}
-            {mapSVGRects(pucks).map(rect => rect)}
+            {mapSVGPolys(pucks, 'black', fillID, setFillID).map(poly => poly)}
           </g>
         )}
         {itemsContext.windows && (
           <g id="windows">
-            {mapSVGLines(windows.coordinates, 'orange').map(window =>  window )}
-            {mapSVGRects(windows).map(rect => rect)}
+            {mapSVGPolys(windows, 'orange', fillID, setFillID).map(poly => poly)}
           </g>
         )}
       </svg>
