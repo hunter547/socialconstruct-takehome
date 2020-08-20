@@ -1,0 +1,44 @@
+@import 'variables';
+.itemslist__container {
+  width: 100%;
+  .itemslist {
+    margin: 0 auto;
+    width: 20rem;
+    border: 0.125rem solid $black;
+    position: relative;
+    border-radius: 1rem;
+    @media(max-width: 54.6875rem) {
+      margin-bottom: 2rem;
+    }
+    .itemslist__header {
+      padding: 1rem 0 1rem 1rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      background-color: $lightgray;
+      h3 {
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+      }
+    }
+    .itemslist__ul {
+      .itemslist__li-div {
+        display: flex;
+        align-items: center;
+        .itemslist__input {
+          margin-right: 0.8rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        p {
+          text-transform: uppercase;
+          letter-spacing: 0.05rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

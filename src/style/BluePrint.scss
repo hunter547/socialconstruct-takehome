@@ -1,11 +1,16 @@
-
-
 .blueprint__container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  padding-left: 8rem;
+  @media(max-width: 54.6875rem) {
+    padding-left: 1.4rem;
+  }
   .blueprint {
     height: 50rem;
     width: 23.5rem;
   }
+}
+
+.poly:hover {
+  cursor: pointer;
 }

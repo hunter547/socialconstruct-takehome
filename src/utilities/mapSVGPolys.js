@@ -14,7 +14,7 @@ export function mapSVGPolys(item, color, fillID, setFillID) {
               stroke={color}
               strokeWidth={0.5}
               fill={nextID === fillID ? color : 'transparent'} 
-              onClick={() => setFillID(nextID)} 
+              onClick={() => {fillID === nextID ? setFillID(null) : setFillID(nextID)}} 
             />
   });
 
